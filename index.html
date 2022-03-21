@@ -12,10 +12,15 @@
   <header ng-include="'header.html'"></header>
   <div class="content">
     <div ng-controller="myController">
+      <button type="button"  ng-click="order = 'nombre'"> Ordenar por Nombre</button>
+      <button type="button"  ng-click="order = 'localidad'"> Ordenar por Localidad</button>
       <input type="text" ng-model='search' />
       <ul>
-        <li ng-repeat="usuario in usuarios | orderBy: 'nombre' | filter:search" ng-show="usuario.disponible">
-          {{usuario.nombre}} - {{usuario.premio | currency:'€'}}
+        <li ng-repeat="usuario in usuarios | orderBy: order | filter:search" ng-show="usuario.disponible">
+         <h3> {{usuario.nombre}} - {{usuario.premio | currency:'€'}}</h3>
+         <div class="remove" ng-click="eliminarUsuario(usuario)">x</div>
+         <!-- VSCODE DA UN ERROR EN EL CODIGO QUE NO DEBERIA MARCAR COMO ERROR EN EL STYLE -->
+         <span class="belt" style="background:{{usuario.cinturon}}">{{usuario.cinturon}}</span>
         </li>
       </ul>
     </div>
