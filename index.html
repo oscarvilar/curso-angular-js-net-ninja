@@ -10,14 +10,15 @@
 
 <body>
   <header ng-include="'header.html'"></header>
-  <div ng-controller="myController">
-    <input type="text" ng-model='search' />
-    <ul>
-      <li ng-repeat="usuario in usuarios | orderBy: 'nombre' | filter:search">
-        {{usuario.nombre}} - {{usuario.premio | currency:'€'}}
-      </li>
-    </ul>
-
+  <div class="content">
+    <div ng-controller="myController">
+      <input type="text" ng-model='search' />
+      <ul>
+        <li ng-repeat="usuario in usuarios | orderBy: 'nombre' | filter:search" ng-show="usuario.disponible">
+          {{usuario.nombre}} - {{usuario.premio | currency:'€'}}
+        </li>
+      </ul>
+    </div>
   </div>
 </body>
 

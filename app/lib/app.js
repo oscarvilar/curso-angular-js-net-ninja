@@ -5,22 +5,26 @@ myApp.controller('myController', ['$scope',function ($scope) {
         {
             nombre:'Oscar',
             apellido: 'Vilar',
-            premio:27
+            premio:27,
+            disponible: true
         },
         {
             nombre:'Antonio',
             apellido: 'Fernandez',
-            premio:24
+            premio:24,
+            disponible: false
         },
         {
             nombre:'Pedro',
             apellido: 'Martinez',
-            premio:30
+            premio:30,
+            disponible: false
         },
         {
             nombre:'Juan',
             apellido: 'Alberto',
-            premio:33
+            premio:33,
+            disponible: true
         },
     ];
 
