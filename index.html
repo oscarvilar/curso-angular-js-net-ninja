@@ -1,12 +1,18 @@
 <!DOCTYPE html>
 <html lang="en" ng-app>
-  <head>
-    <title>TheNetNinja Angular Playlist</title>
-    <link href="content/css/styles.css" rel="stylesheet" type="text/css" />
-    <script src="app/lib/angular.min.js"></script>
-  </head>
-  <body ng-init="color ='red'">
-    <input type="text" ng-model="myData"/>
-    <p class="{{color}}">{{myData}} hola</p>
-  </body>
+
+<head>
+  <title>TheNetNinja Angular Playlist</title>
+  <link href="content/css/styles.css" rel="stylesheet" type="text/css" />
+  <script src="app/lib/angular.min.js"></script>
+</head>
+
+<body ng-init="colores = ['rojo','amarillo','verde','azul']">
+
+  <ul>
+    <li ng-repeat="color in colores">{{color}}</li>
+  </ul>
+
+</body>
+
 </html>
