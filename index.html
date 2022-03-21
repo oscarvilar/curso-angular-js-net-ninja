@@ -1,18 +1,22 @@
 <!DOCTYPE html>
-<html lang="en" ng-app>
+<html lang="en" ng-app='myApp'>
 
 <head>
   <title>TheNetNinja Angular Playlist</title>
   <link href="content/css/styles.css" rel="stylesheet" type="text/css" />
   <script src="app/lib/angular.min.js"></script>
+  <script src="app/lib/app.js "></script>
 </head>
 
-<body ng-init="colores = ['rojo','amarillo','verde','azul']">
+<body>
+  <div ng-controller="myController">
+    <p>{{message}}</p>
 
-  <ul>
-    <li ng-repeat="color in colores">{{color}}</li>
-  </ul>
+    <ul>
+      <li ng-repeat="color in colores">{{color}}</li>
+    </ul>
 
+  </div>
 </body>
 
 </html>
