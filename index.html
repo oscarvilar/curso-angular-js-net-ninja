@@ -10,10 +10,11 @@
 
 <body>
   <div ng-controller="myController">
-    <p>{{message}}</p>
-
+    <input type="text" ng-model='search' />
     <ul>
-      <li ng-repeat="color in colores">{{color}}</li>
+      <li ng-repeat="usuario in usuarios | orderBy: 'nombre' | filter:search">
+        {{usuario.nombre}} - {{usuario.premio | currency:'€'}}
+      </li>
     </ul>
 
   </div>
