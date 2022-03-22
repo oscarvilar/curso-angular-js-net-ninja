@@ -23,6 +23,12 @@
          <span class="belt" style="background:{{usuario.cinturon}}">{{usuario.cinturon}}</span>
         </li>
       </ul>
+      <form ng-submit="agregarUsuario()">
+        <input type="text" placeholder="nombre" ng-model='nuevoUsuario.nombre'/>
+        <input type="text" placeholder="cinturon" ng-model='nuevoUsuario.cinturon'/>
+        <input type="text" placeholder="premio" ng-model='nuevoUsuario.premio'/>
+        <input type="submit" value="Añadir ususario">
+      </form>
     </div>
   </div>
 </body>

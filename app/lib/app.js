@@ -5,6 +5,19 @@ myApp.controller('myController', ['$scope',function ($scope) {
         var usuarioEliminado = $scope.usuarios.indexOf(usuario);
         $scope.usuarios.splice(usuarioEliminado,1)
     }
+    
+    $scope.agregarUsuario = function (){
+        $scope.usuarios.push({
+            nombre: $scope.nuevoUsuario.nombre,
+            cinturon: $scope.nuevoUsuario.cinturon,
+            premio: parseInt($scope.nuevoUsuario.premio),
+            disponible:true
+        });
+
+        $scope.nuevoUsuario.nombre = '';
+        $scope.nuevoUsuario.cinturon = '';
+        $scope.nuevoUsuario.premio = '';
+    };
 
     $scope.usuarios = [
         {
@@ -12,7 +25,8 @@ myApp.controller('myController', ['$scope',function ($scope) {
             apellido: 'Vilar',
             premio: 300,
             disponible: true,
-            cinturon: 'black'
+            cinturon: 'black',
+            thumb: 'https://picsum.photos/300/300'
 
             
         },
@@ -21,21 +35,24 @@ myApp.controller('myController', ['$scope',function ($scope) {
             apellido: 'Fernandez',
             premio: 200,
             disponible: true,
-            cinturon: 'yellow'
+            cinturon: 'yellow',
+            thumb: 'https://picsum.photos/300/300'
         },
         {
             nombre:'Pedro',
             apellido: 'Martinez',
             premio :350,
             disponible: false,
-            cinturon: 'red'
+            cinturon: 'red',
+            thumb: 'https://picsum.photos/300/300'
         },
         {
             nombre:'Juan',
             apellido: 'Alberto',
             premio: 250,
             disponible: true,
-            cinturon: 'red'
+            cinturon: 'red',
+            thumb: 'https://picsum.photos/300/300'
         },
     ];
 
