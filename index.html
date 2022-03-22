@@ -12,21 +12,26 @@
   <header ng-include="'header.html'"></header>
   <div class="content">
     <div ng-controller="myController">
-      <button type="button"  ng-click="order = 'nombre'"> Ordenar por Nombre</button>
-      <button type="button"  ng-click="order = 'localidad'"> Ordenar por Localidad</button>
+      <button type="button" ng-click="order = 'nombre'"> Ordenar por Nombre</button>
+      <button type="button" ng-click="order = 'localidad'"> Ordenar por Localidad</button>
       <input type="text" ng-model='search' />
       <ul>
         <li ng-repeat="usuario in usuarios | orderBy: order | filter:search" ng-show="usuario.disponible">
-         <h3> {{usuario.nombre}} - {{usuario.premio | currency:'€'}}</h3>
-         <div class="remove" ng-click="eliminarUsuario(usuario)">x</div>
-         <!-- VSCODE DA UN ERROR EN EL CODIGO QUE NO DEBERIA MARCAR COMO ERROR EN EL STYLE -->
-         <span class="belt" style="background:{{usuario.cinturon}}">{{usuario.cinturon}}</span>
+          <img 
+          ng-src="{{usuario.thumb}}" 
+          style="margin:-12px 10px 0 0;float:left;width:50px;border-radius: 50%;"
+          ng-show="usuario.thumb"
+          >
+          <h3> {{usuario.nombre}} - {{usuario.premio | currency:'€'}}</h3>
+          <div class="remove" ng-click="eliminarUsuario(usuario)">x</div>
+          <!-- VSCODE DA UN ERROR EN EL CODIGO QUE NO DEBERIA MARCAR COMO ERROR EN EL STYLE -->
+          <span class="belt" style="background:{{usuario.cinturon}}">{{usuario.cinturon}}</span>
         </li>
       </ul>
       <form ng-submit="agregarUsuario()">
-        <input type="text" placeholder="nombre" ng-model='nuevoUsuario.nombre'/>
-        <input type="text" placeholder="cinturon" ng-model='nuevoUsuario.cinturon'/>
-        <input type="text" placeholder="premio" ng-model='nuevoUsuario.premio'/>
+        <input type="text" placeholder="nombre" ng-model='nuevoUsuario.nombre' />
+        <input type="text" placeholder="cinturon" ng-model='nuevoUsuario.cinturon' />
+        <input type="text" placeholder="premio" ng-model='nuevoUsuario.premio' />
         <input type="submit" value="Añadir ususario">
       </form>
     </div>
